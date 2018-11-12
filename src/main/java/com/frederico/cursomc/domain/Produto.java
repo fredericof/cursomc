@@ -49,7 +49,7 @@ public class Produto implements Serializable {
 	private List<Categoria> categorias = new ArrayList<Categoria>();
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "id.pedido")
+	@OneToMany(mappedBy = "id.produto")
 	private Set<ItemPedido> itens = new HashSet<ItemPedido>();
 
 	public Produto(Integer id, String nome, Double preco) {
