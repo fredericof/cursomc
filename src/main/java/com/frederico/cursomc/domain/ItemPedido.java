@@ -38,6 +38,11 @@ public class ItemPedido implements Serializable {
 		this.preco = preco;
 	}
 	
+	// Não é necessário ter um atributo SubTotal para o mesmo ser serializado, apenas o método GET é necessário
+	public double getSubTotal() {
+		return (preco - desconto) * quantidade;
+	}
+	
 	@JsonIgnore
 	public Pedido getPedido() {
 		return id.getPedido();
